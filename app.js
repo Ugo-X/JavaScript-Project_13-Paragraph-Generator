@@ -33,12 +33,16 @@ form.addEventListener("submit", function(evt){
 
 // next up, we want to set up a condition in such a way that anytime we click on our button depending on the range/type of the value input we want to generate paragraphs.
 if(isNaN(value) || value <=0 || value > 9){
-  randomText.innerHTML = `<p>${text[random]} </p>` 
+  randomText.innerHTML = `<p class = "random-text">${text[random]} </p>` 
 }   
 // up above we are saying that if the value is not a number, less than or equals to zero or greater than 9 we want to equate our previously created article cover, equal to a random paragraph from our text array.
 else{
   let popText = text.slice(0,value)
- popText = popText.map(func)
+ popText = popText.map(function(content){
+return `<p class = "random-text"> ${content} </p>`
+ })
+console.log(popText);
+randomText.innerHTML = popText.join('')
 }
 
 })
