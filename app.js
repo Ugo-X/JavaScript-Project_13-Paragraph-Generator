@@ -17,6 +17,7 @@ const quantity = document.getElementById("quantity");
 const randomText = document.querySelector(".random-text");
 
 
+
 form.addEventListener("submit", function(evt){
   // The default behaviour of forms is to submit to a server so the first thing we do is to use the prevent default method to cancel that behaviour.
   evt.preventDefault()
@@ -44,5 +45,5 @@ return `<p class = "random-text"> ${content} </p>`
 console.log(popText);
 randomText.innerHTML = popText.join('')
 }
-
+// up above, we are saying that we want to limit our new array to 9 indexes and then we iterate over newly created array and use our map function to return the number of paragraphs specified by our user. Then we place it inside our random text article container
 })
